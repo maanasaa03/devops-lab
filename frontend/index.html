@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Frontend Page</h1>
+  <button onclick="fetchData()">Get Data from Backend</button>
+  <p id="output"></p>
+
+  <script>
+    function fetchData() {
+      fetch('http://localhost:5000/api')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('output').innerText = data.message;
+        });
+    }
+  </script>
+</body>
+</html>
